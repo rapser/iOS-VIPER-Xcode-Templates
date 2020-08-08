@@ -28,7 +28,7 @@ class UserService: NSObject {
         ]
 
         return Alamofire.request(
-            Constants.API.URLBase.appendingPathComponent("api/v1/users/login"),
+            Constants.API.URLBase.appendingPathComponent("api/v2/users/login"),
             method: .post,
             parameters: parameters
             ).pokedexValidate().responseCodableJSONAPI(keyPath: "data", decoder: .kebabCaseDecoder, completionHandler: completion)
@@ -50,7 +50,7 @@ class UserService: NSObject {
         ]
 
         return Alamofire.request(
-            Constants.API.URLBase.appendingPathComponent("api/v1/users"),
+            Constants.API.URLBase.appendingPathComponent("api/v2/users"),
             method: .post,
             parameters: parameters
             ).pokedexValidate().responseCodableJSONAPI(keyPath: "data", decoder: .kebabCaseDecoder, completionHandler: completion)
