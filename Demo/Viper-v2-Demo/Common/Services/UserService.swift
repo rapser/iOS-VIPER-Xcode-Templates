@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-import Japx
+//import Japx
 
 typealias LoginCompletionBlock = (DataResponse<User>) -> (Void)
 
