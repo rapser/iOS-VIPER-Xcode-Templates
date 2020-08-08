@@ -67,20 +67,20 @@ final class LoginViewController: UIViewController {
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(_keyboardWillShow(_:)),
-            name: .UIKeyboardWillShow,
+            name: UIResponder.keyboardWillShowNotification,
             object: nil
         )
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(_keyboardWillHide(_:)),
-            name: .UIKeyboardWillHide,
+            name: UIResponder.keyboardWillHideNotification,
             object: nil
         )
     }
 
     @objc private func _keyboardWillShow(_ notification: Notification) {
         let userInfo = notification.userInfo!
-        let keyboardHeight = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.height
+        let keyboardHeight = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.height
 
         view.layoutIfNeeded()
         loginButtonBottomMargin.constant = keyboardHeight

@@ -31,7 +31,7 @@ final class PokemonDetailsViewController: UIViewController {
     }
 
     private func _setupTableView() {
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100
         tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
